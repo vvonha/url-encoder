@@ -1,129 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>URL Encoder/Decoder - Encode & Decode URLs Online Free</title>
-  <meta name="description" content="Free online URL encoder and decoder. Encode special characters for URLs or decode percent-encoded strings instantly.">
-  <meta name="keywords" content="url encoder, url decoder, encode url, decode url, percent encoding, urlencode online">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8581458440606037" crossorigin="anonymous"></script>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
-    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    h1 { text-align: center; margin: 30px 0; font-size: 2.5rem; }
-    .subtitle { text-align: center; color: #64748b; margin-bottom: 30px; }
-    .card { background: #1e293b; border-radius: 16px; padding: 25px; margin-bottom: 20px; }
-    .card h2 { font-size: 1.2rem; margin-bottom: 15px; color: #38bdf8; }
-    textarea { width: 100%; height: 150px; padding: 15px; border: 2px solid #334155; border-radius: 10px; background: #0f172a; color: #e2e8f0; font-family: 'SF Mono', monospace; font-size: 14px; resize: vertical; }
-    textarea:focus { outline: none; border-color: #38bdf8; }
-    .btn-row { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
-    button { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.95rem; }
-    .encode-btn { background: #38bdf8; color: #0f172a; }
-    .decode-btn { background: #a78bfa; color: #0f172a; }
-    .copy-btn { background: #334155; color: #e2e8f0; }
-    button:hover { opacity: 0.9; }
-    .arrow { text-align: center; font-size: 2rem; color: #38bdf8; margin: 10px 0; }
-    .ad-space { background: #1e293b; padding: 20px; text-align: center; margin: 20px 0; border-radius: 12px; }
-    footer { text-align: center; padding: 30px; color: #64748b; }
-    a { color: #38bdf8; }
-    .examples { margin-top: 20px; }
-    .example { background: #0f172a; padding: 12px; border-radius: 8px; margin: 8px 0; font-family: monospace; font-size: 0.9rem; }
-    .example-label { color: #64748b; font-size: 0.8rem; margin-bottom: 5px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Encoder/Decoder - Encode & Decode URLs</title>
+    <meta name="description" content="Encode and decode URLs online. Convert special characters for safe URL transmission. Free URL encoder tool.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#22c55e;--bg:#0a0a0f;--card:#111118;--text:#fff;--text-muted:#71717a;--border:rgba(255,255,255,0.06);--gradient:linear-gradient(135deg,#22c55e 0%,#4ade80 100%)}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:24px}
+        header{text-align:center;padding:50px 0 40px}
+        .logo{font-size:3rem;margin-bottom:16px}
+        h1{font-size:2.4rem;font-weight:800;margin-bottom:12px;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--text-muted);font-size:1.1rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:28px;margin-bottom:20px}
+        .mode-toggle{display:flex;gap:8px;padding:6px;background:rgba(255,255,255,0.03);border-radius:14px;margin-bottom:24px}
+        .mode-btn{flex:1;padding:14px;border:none;border-radius:10px;cursor:pointer;font-size:1rem;font-weight:600;background:transparent;color:var(--text-muted);transition:all 0.3s}
+        .mode-btn.active{background:var(--gradient);color:#fff;box-shadow:0 4px 15px rgba(34,197,94,0.3)}
+        label{display:block;margin-bottom:10px;color:var(--text-muted);font-weight:500}
+        textarea{width:100%;height:150px;padding:18px;border:1px solid var(--border);border-radius:14px;font-family:'JetBrains Mono',monospace;font-size:0.95rem;background:rgba(255,255,255,0.02);color:var(--text);resize:vertical}
+        textarea:focus{outline:none;border-color:var(--primary);background:rgba(34,197,94,0.05)}
+        .btn-row{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+        .btn{padding:14px 24px;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;gap:8px}
+        .btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 15px rgba(34,197,94,0.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(34,197,94,0.4)}
+        .btn-secondary{background:rgba(255,255,255,0.05);color:var(--text)}
+        .btn-secondary:hover{background:rgba(255,255,255,0.1)}
+        .arrow{text-align:center;font-size:2rem;margin:16px 0;color:var(--primary)}
+        .info-box{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:16px;margin-top:20px}
+        .info-box h4{color:var(--primary);margin-bottom:8px}
+        .info-box p{color:var(--text-muted);font-size:0.9rem}
+        footer{text-align:center;padding:40px 20px;color:var(--text-muted);font-size:0.9rem}
+        footer a{color:var(--primary);text-decoration:none}
+        @media(max-width:480px){h1{font-size:2rem}}
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🔗 URL Encoder/Decoder</h1>
-    <p class="subtitle">Encode special characters or decode percent-encoded URLs</p>
-    
-    <div class="ad-space">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8581458440606037" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-    
-    <div class="card">
-      <h2>📝 Input (Text or URL)</h2>
-      <textarea id="input" placeholder="Enter text or URL to encode/decode...">https://example.com/search?q=hello world&name=김철수</textarea>
-      <div class="btn-row">
-        <button class="encode-btn" onclick="encode()">⬇️ Encode</button>
-        <button class="decode-btn" onclick="decode()">⬆️ Decode</button>
-        <button class="copy-btn" onclick="copyInput()">📋 Copy</button>
-      </div>
-    </div>
-    
-    <div class="arrow">↕️</div>
-    
-    <div class="card">
-      <h2>✨ Output</h2>
-      <textarea id="output" placeholder="Result will appear here..." readonly></textarea>
-      <div class="btn-row">
-        <button class="copy-btn" onclick="copyOutput()">📋 Copy Result</button>
-        <button class="copy-btn" onclick="useAsInput()">🔄 Use as Input</button>
-      </div>
-    </div>
-    
-    <div class="card">
-      <h2>📚 Common Encodings</h2>
-      <div class="examples">
-        <div class="example-label">Space</div>
-        <div class="example">" " → %20 or +</div>
-        <div class="example-label">Ampersand</div>
-        <div class="example">"&" → %26</div>
-        <div class="example-label">Question Mark</div>
-        <div class="example">"?" → %3F</div>
-        <div class="example-label">Korean Characters</div>
-        <div class="example">"한글" → %ED%95%9C%EA%B8%80</div>
-      </div>
-    </div>
-    
-    <div class="ad-space">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8581458440606037" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="container">
+        <header>
+            <div class="logo">🔗</div>
+            <h1>URL Encoder/Decoder</h1>
+            <p class="subtitle">Encode and decode URLs safely</p>
+        </header>
+        
+        <div class="card">
+            <div class="mode-toggle">
+                <button class="mode-btn active" onclick="setMode('encode')">📤 Encode</button>
+                <button class="mode-btn" onclick="setMode('decode')">📥 Decode</button>
+            </div>
+            
+            <label id="input-label">Text to Encode</label>
+            <textarea id="input" placeholder="Enter text to encode..."></textarea>
+            
+            <div class="btn-row">
+                <button class="btn btn-primary" onclick="convert()">⚡ Convert</button>
+                <button class="btn btn-secondary" onclick="copyOutput()">📋 Copy</button>
+                <button class="btn btn-secondary" onclick="clearAll()">🗑️ Clear</button>
+                <button class="btn btn-secondary" onclick="swapFields()">🔄 Swap</button>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <label id="output-label">Encoded URL</label>
+            <textarea id="output" readonly placeholder="Result will appear here..."></textarea>
+            
+            <div class="info-box">
+                <h4>💡 What is URL Encoding?</h4>
+                <p>URL encoding converts special characters to % followed by hex values. Spaces become %20 or +. This ensures URLs transmit correctly across the internet.</p>
+            </div>
+        </div>
     </div>
     
     <footer>
-      <p>Made with ❤️ | <a href="https://vvonha.github.io/crypto-funding-scanner/">More Free Tools</a></p>
+        <p>© 2026 <a href="https://t.me/vvonha">@vvonha</a> · More tools at vvonha.github.io</p>
     </footer>
-  </div>
-  
-  <script>
-    const input = document.getElementById('input');
-    const output = document.getElementById('output');
     
-    function encode() {
-      try {
-        output.value = encodeURIComponent(input.value);
-      } catch (e) {
-        output.value = 'Error: ' + e.message;
-      }
-    }
-    
-    function decode() {
-      try {
-        output.value = decodeURIComponent(input.value);
-      } catch (e) {
-        output.value = 'Error: Invalid encoded string - ' + e.message;
-      }
-    }
-    
-    function copyInput() {
-      navigator.clipboard.writeText(input.value);
-      alert('Input copied!');
-    }
-    
-    function copyOutput() {
-      navigator.clipboard.writeText(output.value);
-      alert('Output copied!');
-    }
-    
-    function useAsInput() {
-      input.value = output.value;
-      output.value = '';
-    }
-    
-    // Initial encode
-    encode();
-  </script>
+    <script>
+        let mode = 'encode';
+        
+        function setMode(m) {
+            mode = m;
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.getElementById('input-label').textContent = m === 'encode' ? 'Text to Encode' : 'URL to Decode';
+            document.getElementById('output-label').textContent = m === 'encode' ? 'Encoded URL' : 'Decoded Text';
+            document.getElementById('input').placeholder = m === 'encode' ? 'Enter text to encode...' : 'Enter URL to decode...';
+        }
+        
+        function convert() {
+            const input = document.getElementById('input').value;
+            let output;
+            
+            try {
+                if (mode === 'encode') {
+                    output = encodeURIComponent(input);
+                } else {
+                    output = decodeURIComponent(input);
+                }
+            } catch (e) {
+                output = 'Error: ' + e.message;
+            }
+            
+            document.getElementById('output').value = output;
+        }
+        
+        function copyOutput() {
+            const output = document.getElementById('output');
+            output.select();
+            navigator.clipboard.writeText(output.value);
+        }
+        
+        function clearAll() {
+            document.getElementById('input').value = '';
+            document.getElementById('output').value = '';
+        }
+        
+        function swapFields() {
+            const output = document.getElementById('output').value;
+            document.getElementById('input').value = output;
+            document.getElementById('output').value = '';
+            
+            // Toggle mode
+            setMode(mode === 'encode' ? 'decode' : 'encode');
+            document.querySelectorAll('.mode-btn')[mode === 'encode' ? 0 : 1].classList.add('active');
+            document.querySelectorAll('.mode-btn')[mode === 'encode' ? 1 : 0].classList.remove('active');
+        }
+        
+        // Real-time conversion
+        document.getElementById('input').addEventListener('input', convert);
+    </script>
 </body>
 </html>
